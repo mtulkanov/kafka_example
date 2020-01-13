@@ -1,0 +1,14 @@
+spring:
+  kafka:
+    bootstrapServers:
+      - 'kafka:9092'
+    producer:
+      valueSerializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      valueDeserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      groupId: my_group_id
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
